@@ -28,7 +28,7 @@ pause(5)
 
 for k=1:9223372036854775800
     % Pega o log de sinais a cada 3 segundos
-    pause(3);
+    pause(1.5);
     m = mm.myoData.emg_log;
     
     % Confere os ultimos 5 segundos do log 
@@ -57,31 +57,31 @@ for k=1:9223372036854775800
         if (isequal(pdt2, 'punho'))
             disp('modelo mudou para o punho')
             writePos(180, 180, 0, 0);
-            pause(3);
+            pause(0.5);
         end
         
         if isequal(pdt2, 'indicador')
             disp('modelo mudou para o indicador')
             writePos(180, 180, 150, 0);
-            pause(3);
+            pause(0.5);
         end
         
         if isequal(pdt2, 'garra')
             disp('modelo mudou para o garra')
             writePos(0, 0, 180, 180);
-            pause(3);
+            pause(0.5);
         end
         
         if isequal(pdt2, 'pinca')
             disp('modelo mudou para o pinca')
             writePos(160, 165, 30, 180);
-            pause(3);
+            pause(0.5);
         end
         
         if isequal(pdt2, 'polegar')
             disp('modelo mudou para o polegar')
             writePos(180, 20, 0, 0);
-            pause(3);
+            pause(0.5);
         end
     else
         disp('nenhum movimento com 25%+ de ocorrencias')
