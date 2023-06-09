@@ -1,5 +1,5 @@
-# Sheikah-Arm-Contorle-da-protese
-Código Matlab para o controle da prótese Sheikah Arm
+# Sheikah Arm - Controle da protese
+Código Matlab para o controle da prótese Sheikah Arm atráves do sinal EMG
 
 ```matlab
 clear all;
