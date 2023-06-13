@@ -34,11 +34,17 @@ for k=1:9223372036854775800
     % Confere os ultimos 5 segundos do log 
     mt = m(end-750:end-250,:);
     
-    % Normaliza o sinal (feature)
+    % Transforma o sinal 
     m2 = mt.*mt;
     
+    mt3 = mt2./abs(mt);
+
+    mt4 = mt3;
+
+    mt4(isnan(mt4))=0;
+    
     % Classifica o sinal (classificador)
-    respm2 = classifyEMG2(m2);
+    respm2 = classifyEMG3final(m4);
     
     [s,~,j] = unique(respm2);
 
