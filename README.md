@@ -60,8 +60,8 @@ for k=1:9223372036854775800
     
     % Confere o movimento e se ele apareceu mais de 25% das vezes no sinal
     if (prt>=25)
-        if (isequal(pdt2, 'punho'))
-            disp('modelo mudou para o punho')
+        if (isequal(pdt2, 'mão fechada'))
+            disp('modelo mudou para o mão fechada')
             writePos(180, 180, 0, 0);
             pause(0.5);
         end
