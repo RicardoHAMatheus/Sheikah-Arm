@@ -44,7 +44,7 @@ for k=1:9223372036854775800
     mt4(isnan(mt4))=0;
     
     % Classifica o sinal (classificador)
-    respm2 = classifyEMG3final(m4);
+    respm2 = classifyEMG3final(mt4);
     
     [s,~,j] = unique(respm2);
 
