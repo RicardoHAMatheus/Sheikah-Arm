@@ -31,7 +31,7 @@ mm = MyoMex()
 pause(5)
 
 for k=1:inf
-    % Pega o log de sinais a cada 1.5 segundos
+    % Pega o log de sinais a cada 3.5 segundos
     pause(3);
     m = mm.myoData.emg_log;
     
