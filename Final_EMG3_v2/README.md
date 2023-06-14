@@ -2,10 +2,10 @@
 Código Matlab para o controle da prótese Sheikah Arm atráves do sinal EMG
 
 Mudanças da v1 para a v2:
-    - Melhoria da acurácia do sistema: de 79,6% para 83,9%
-    - Atualização da base de dados do movimento de polegar para reduzir erros
-    - Troca do movimento de garra para o movimento de abrir a mão
-    - redução do tempo de resposta do sistema: De 3,5 segundos para 2 segundos
+- Melhoria da acurácia do sistema: de 79,6% para 83,9%
+- Atualização da base de dados do movimento de polegar para reduzir erros
+- Troca do movimento de garra para o movimento de abrir a mão
+- redução do tempo de resposta do sistema: De 3,5 segundos para 2 segundos
 
 ```matlab
 clear all;
