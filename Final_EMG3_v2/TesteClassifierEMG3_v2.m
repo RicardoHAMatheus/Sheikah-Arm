@@ -12,7 +12,7 @@ for k=1:inf
     pause(1.5);
     m = mm.myoData.emg_log;
     
-    % Confere os ultimos 5 segundos do log 
+    % Confere os ultimos 1.25 segundos de sinal de pico no log 
     mt = m(end-875:end-375,:);
     
      % Transforma o sinal 
@@ -32,7 +32,7 @@ for k=1:inf
     % Movimento que foi lido mais vezes
     pdt2 = s{mode(j)}
     
-    % RepetiÁıes de cada movimento lido no intervalo, e suas porcentagens
+    % Repeti√ß√µes de cada movimento lido no intervalo, e suas porcentagens
     y = groupcounts(respm2);
     % Porcentagem do movimento mais lido
     y_m = sum(y,"all");
@@ -42,7 +42,7 @@ for k=1:inf
     % Confere o movimento e se ele apareceu mais de 25% das vezes no sinal
     if (prt>=25)
         if (isequal(pdt2, 'mao_fechada'))
-            disp('modelo mudou para m„o fechada')
+            disp('modelo mudou para m√£o fechada')
             pause(0.5);
         end
         
@@ -52,7 +52,7 @@ for k=1:inf
         end
         
         if isequal(pdt2, 'mao_aberta')
-            disp('modelo mudou para m„o aberta')
+            disp('modelo mudou para m√£o aberta')
             pause(0.5);
         end
         
