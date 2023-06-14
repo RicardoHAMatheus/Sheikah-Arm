@@ -39,7 +39,7 @@ for k=1:inf
     pause(1.5);
     m = mm.myoData.emg_log;
     
-    % Confere os ultimos 1,25 segundos de sinal de pico no log 
+    % Confere os ultimos 1.25 segundos de sinal de pico no log 
     mt = m(end-875:end-375,:);
     
     % Transforma o sinal 
