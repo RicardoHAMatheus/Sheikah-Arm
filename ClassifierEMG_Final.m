@@ -9,13 +9,13 @@ global s2
 global s3
 global s4
 
-% dedo mÈdio 0/aberto 180/fechado
+% dedo m√©dio 0/aberto 180/fechado
 s1 = servo(r, 17, 'MinPulseDuration', 500e-6, 'MaxPulseDuration', 2400e-6);
 % polegar 0/aberto 180/fechado
 s2 = servo(r, 16, 'MinPulseDuration', 500e-6, 'MaxPulseDuration', 2400e-6);
 % indidcador 0/fechado 180/aberto
 s3 = servo(r, 20, 'MinPulseDuration', 500e-6, 'MaxPulseDuration', 2400e-6);
-% mÌnimo/anelar 0/fechado 180/aberto
+% m√≠nimo/anelar 0/fechado 180/aberto
 s4 = servo(r, 21, 'MinPulseDuration', 500e-6, 'MaxPulseDuration', 2400e-6);
 
 
@@ -23,7 +23,7 @@ mm = MyoMex()
 pause(5)
 
 for k=1:inf
-    % Pega o log de sinais a cada 1.5 segundos
+    % Pega o log de sinais a cada 3.5 segundos
     pause(3);
     m = mm.myoData.emg_log;
     
@@ -47,7 +47,7 @@ for k=1:inf
     % Movimento que foi lido mais vezes
     pdt2 = s{mode(j)}
     
-    % RepetiÁıes de cada movimento lido no intervalo, e suas porcentagens
+    % Repeti√ß√µes de cada movimento lido no intervalo, e suas porcentagens
     y = groupcounts(respm2);
     % Porcentagem do movimento mais lido
     y_m = sum(y,"all");
@@ -57,7 +57,7 @@ for k=1:inf
     % Confere o movimento e se ele apareceu mais de 25% das vezes no sinal
     if (prt>=25)
         if (isequal(pdt2, 'punho'))
-            disp('modelo mudou para o m„o fechada')
+            disp('modelo mudou para o m√£o fechada')
             writePos(180, 180, 0, 0);
             pause(0.5);
         end
