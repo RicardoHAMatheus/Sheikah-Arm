@@ -26,9 +26,9 @@ s4 = servo(r, 21, 'MinPulseDuration', 500e-6, 'MaxPulseDuration', 2400e-6);
 mm = MyoMex()
 pause(5)
 
-for k=1:9223372036854775800
+for k=1:inf
     % Pega o log de sinais a cada 1.5 segundos
-    pause(1.5);
+    pause(3);
     m = mm.myoData.emg_log;
     
     % Confere os ultimos 5 segundos do log 
@@ -60,7 +60,7 @@ for k=1:9223372036854775800
     
     % Confere o movimento e se ele apareceu mais de 25% das vezes no sinal
     if (prt>=25)
-        if (isequal(pdt2, 'mão fechada'))
+        if (isequal(pdt2, 'punho'))
             disp('modelo mudou para o mão fechada')
             writePos(180, 180, 0, 0);
             pause(0.5);
