@@ -1,5 +1,11 @@
-# Sheikah Arm - Controle da protese
+# Sheikah Arm - Controle da protese V2
 Código Matlab para o controle da prótese Sheikah Arm atráves do sinal EMG
+
+Mudanças da v1 para a v2:
+    - Melhoria da acurácia do sistema: de 79,6% para 83,9%
+    - Atualização da base de dados do movimento de polegar para reduzir erros
+    - Troca do movimento de garra para o movimento de abrir a mão
+    - redução do tempo de resposta do sistema: De 3,5 segundos para 2 segundos
 
 ```matlab
 clear all;
@@ -28,11 +34,11 @@ pause(5)
 
 for k=1:inf
     % Pega o log de sinais a cada 1.5 segundos
-    pause(3);
+    pause(1.5);
     m = mm.myoData.emg_log;
     
-    % Confere os ultimos 5 segundos do log 
-    mt = m(end-750:end-250,:);
+    % Confere os ultimos 1,25 segundos de sinal de pico no log 
+    mt = m(end-875:end-375,:);
     
     % Transforma o sinal 
     m2 = mt.*mt;
@@ -44,7 +50,7 @@ for k=1:inf
     mt4(isnan(mt4))=0;
     
     % Classifica o sinal (classificador)
-    respm2 = classifyEMG3final(mt4);
+    respm2 = classifyEMG3_v2(mt4);
     
     [s,~,j] = unique(respm2);
 
@@ -60,32 +66,32 @@ for k=1:inf
     
     % Confere o movimento e se ele apareceu mais de 25% das vezes no sinal
     if (prt>=25)
-        if (isequal(pdt2, 'punho'))
-            disp('modelo mudou para o mão fechada')
+        if (isequal(pdt2, 'mao_fechada'))
+            disp('modelo mudou para mão fechada')
             writePos(180, 180, 0, 0);
             pause(0.5);
         end
         
         if isequal(pdt2, 'indicador')
-            disp('modelo mudou para o indicador')
+            disp('modelo mudou para indicador')
             writePos(180, 180, 150, 0);
             pause(0.5);
         end
         
-        if isequal(pdt2, 'garra')
-            disp('modelo mudou para o garra')
+        if isequal(pdt2, 'mao_aberta')
+            disp('modelo mudou para mão aberta')
             writePos(0, 0, 180, 180);
             pause(0.5);
         end
         
         if isequal(pdt2, 'pinca')
-            disp('modelo mudou para o pinca')
+            disp('modelo mudou para pinca')
             writePos(160, 165, 30, 180);
             pause(0.5);
         end
         
         if isequal(pdt2, 'polegar')
-            disp('modelo mudou para o polegar')
+            disp('modelo mudou para polegar')
             writePos(180, 20, 0, 0);
             pause(0.5);
         end
