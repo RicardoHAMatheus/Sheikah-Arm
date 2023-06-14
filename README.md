@@ -1,5 +1,8 @@
-# Sheikah Arm - Controle da protese
+# Sheikah Arm - Controle da protese v1
 Código Matlab para o controle da prótese Sheikah Arm atráves do sinal EMG
+
+Obs: Modelo desatualizado utilizado na monografia e na apresentação do Trabalho de Conclusão de Curso devido a falta de tempo hábil para implementação da v2
+Para versão mais atualizada utilizar a v2
 
 ```matlab
 clear all;
