@@ -7,6 +7,8 @@ Mudanças da v1 para a v2:
 - Troca do movimento de garra para o movimento de abrir a mão
 - redução do tempo de resposta do sistema: De 3,5 segundos para 2 segundos
 
+Obs: Necessário ter o arquivo "install_myo_mex.m" na mesma pasta para executar
+
 ```matlab
 clear all;
 
